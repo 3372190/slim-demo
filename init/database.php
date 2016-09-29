@@ -1,9 +1,11 @@
 <?php
-
+//Database Object is used from Eloquent, lavarel!!
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+//Initialize Capsule/Manager;
 $capsule = new Capsule;
 
+//** Adding the Connection to MySQL.
 $capsule->addConnection([
   'driver'    => 'mysql',
   'host'      => '127.0.0.1',
@@ -15,5 +17,10 @@ $capsule->addConnection([
   'prefix'    => '',
 ]);
 
+/**
+ * ***** THIS IS IMPORTANT ********
+ * Eloquent Must setAsGlobal Variable !!!
+ * Eloquent Must be Booted To be used. bootEloquent();
+ */
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
