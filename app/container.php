@@ -3,7 +3,7 @@
 use Slim\Views\Twig as View;
 use Slim\Views\TwigExtension as TwigExtension;
 use Interop\Container\ContainerInterface;
-
+use App\Models\User;
 
 return [
 
@@ -18,5 +18,8 @@ return [
     return $view;
   },
 
+  User::class => function (ContainerInterface $container){
+      return new User;
+  },
 
 ];
