@@ -1,0 +1,2 @@
+# slim-demo
+/vendor
